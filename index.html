@@ -962,8 +962,8 @@
       await fetch(APPS_SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
-        headers: { "Content-Type": "text/plain" },
-        body: JSON.stringify(payload)
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(payload).toString()
       });
       // no-cors means we can't read response — assume success
       document.getElementById("nomination-form").style.display = "none";
